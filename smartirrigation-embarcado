@@ -1,0 +1,24 @@
+void setup()
+{
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  char c = Serial.read();
+  if(c=='A') digitalWrite(8, HIGH);
+  if(c=='B') digitalWrite(9, HIGH);
+  if(c=='C') digitalWrite(10, HIGH);   
+  if(c=='D') digitalWrite(11, HIGH);   
+  if(c=='a') digitalWrite(8, LOW);
+  if(c=='b') digitalWrite(9, LOW);
+  if(c=='c') digitalWrite(10, LOW);
+  if(c=='d') digitalWrite(11, LOW);
+  
+  Serial.print(c);
+  delay(1000);
+}
